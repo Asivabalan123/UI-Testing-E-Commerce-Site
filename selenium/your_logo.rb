@@ -18,6 +18,7 @@ class SeleniumQA_yourLogo
     @months = 'months'
     @years = 'years'
 
+
   end
 
   def visit_your_logo
@@ -82,45 +83,126 @@ class SeleniumQA_yourLogo
     option.select_by(:value, '1995')
   end
 
-  def enter_first_name(text)
-    @chrome_driver.find_element(:id, @first_name).send_keys(text)
+  def input_newsletter_field
+    @chrome_driver.find_element(:id,'uniform-newsletter').click
   end
 
-  def enter_last_name(text)
-    @chrome_driver.find_element(:id, @last_name).send_keys(text)
+  def input_special_offers_field
+    @chrome_driver.find_element(:id,'uniform-optin').click
   end
 
+  def clear_first_name_address
+    @chrome_driver.find_element(:id, 'firstname').clear
+  end
 
+  def input_first_name_address(text)
+    @chrome_driver.find_element(:id, 'firstname').send_keys(text)
+  end
 
+  def clear_last_name_address
+    @chrome_driver.find_element(:id, 'lastname').clear
+  end
 
+  def input_last_name_address(text)
+    @chrome_driver.find_element(:id, 'lastname').send_keys(text)
+  end
+
+  def input_company_field(text)
+      @chrome_driver.find_element(:id, 'company').send_keys(text)
+  end
+
+  def input_address_field(text)
+     @chrome_driver.find_element(:id, 'address1').send_keys(text)
+  end
+
+  def input_city_field(text)
+    @chrome_driver.find_element(:id, 'city').send_keys(text)
+  end
+
+  def input_state_field
+  dropDownMenu4 = @chrome_driver.find_element(:id, 'id_state')
+  option = Selenium::WebDriver::Support::Select.new(dropDownMenu4)
+  option.select_by(:text, 'Florida')
+  end
+
+  def input_postcode_field(text)
+    @chrome_driver.find_element(:id, 'postcode').send_keys(text)
+  end
+
+  def input_country_field
+  dropDownMenu5 = @chrome_driver.find_element(:id, 'id_country')
+  option = Selenium::WebDriver::Support::Select.new(dropDownMenu5)
+  option.select_by(:value, '21')
+  end
+
+  def input_mobile_phone(text)
+    @chrome_driver.find_element(:id, 'phone_mobile').send_keys(text)
+  end
+
+  def clear_assigning
+    @chrome_driver.find_element(:id, 'alias').clear
+  end
+
+  def input_assign_address(text)
+    @chrome_driver.find_element(:id, 'alias').send_keys(text)
+  end
+
+  def click_register_button
+    @chrome_driver.find_element(:id, 'submitAccount').click
+  end
+
+  def click_sign_out_button
+    @chrome_driver.find_element(:class, 'logout').click
+  end
+
+  def input_sign_in_email(text)
+    @chrome_driver.find_element(:id, 'email').send_keys(text)
+  end
+
+  def input_sign_in_password(text)
+    @chrome_driver.find_element(:id, 'passwd').send_keys(text)
+  end
+
+  def input_sign_in_password_field(text)
+    @chrome_driver.find_element(:id, 'passwd').send_keys(text)
+  end
 end
 
 
 
-test = SeleniumQA_yourLogo.new
-test.visit_your_logo
-test.visit_sign_in
-test.create_email_address("abinu.siva@hotmail.com")
-test.create_an_account
-sleep 3
-test.input_mr_field
-test.input_mrs_field
-test.enter_first_name("Abinu")
-sleep 3
-test.enter_last_name('Sivabalan')
-sleep 3
-test.clear_signed_up_email_value
-sleep 3
-test.input_signed_up_email_value("abinu.siva@hotmail.com")
-sleep 3
-test.enter_password('hiiii')
-sleep 3
-test.enter_dob_day('14')
-sleep 3
-test.enter_dob_month('10')
-sleep 3
-test.enter_dob_year('1995')
-sleep 3
-test.enter_first_name('Abinu')
-sleep 3
-test.enter_last_name('Sivabalan')
+# test = SeleniumQA_yourLogo.new
+# test.visit_your_logo
+# test.visit_sign_in
+# test.create_email_address("abinu.siva@hotmail.com")
+# test.create_an_account
+# sleep 3
+# test.input_mr_field
+# test.input_mrs_field
+# test.enter_first_name("Abinu")
+# sleep 3
+# test.enter_last_name('Sivabalan')
+# sleep 3
+# test.clear_signed_up_email_value
+# sleep 3
+# test.input_signed_up_email_value("abinu.siva@hotmail.com")
+# sleep 3
+# test.enter_password('hiiii')
+# sleep 3
+# test.enter_dob_day('14')
+# sleep 3
+# test.enter_dob_month('10')
+# sleep 3
+# test.enter_dob_year('1995')
+# sleep 3
+# test.input_newsletter_field
+# sleep 3
+# test.input_special_offers_field
+# sleep 3
+# test.clear_first_name_address
+# sleep 3
+# test.input_first_name_address('Apina')
+# sleep 3
+# test.clear_last_name_address
+# sleep 3
+# test.input_last_name_address('Sivabalan')
+# sleep 3
