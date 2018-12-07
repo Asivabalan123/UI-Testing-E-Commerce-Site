@@ -12,7 +12,7 @@ describe 'Testing e-commerce using selenium' do
     @last_name = @generate.second_name
     @password = 'Abinu123'
     @company = @generate.company_user
-    @address = '3909  Joeid Street'
+    @address = @generate.address_user
     @city = @generate.city_address
     @postcode = '86572'
     @number = '65169652646'
@@ -115,78 +115,77 @@ it "should accept a company name in the address area" do
 end
 
 it "should accept a address in the address area" do
-    @your_logos.input_address_field(@address)
-    expect(@your_logos.get_address).to eq @address
+    @your_logo.input_address_field(@address)
+    expect(@your_logo.get_address).to eq @address
     sleep 5
 end
 
 it "should accept a city in the address" do
-  @your_logo.input_city_field(@city)
-  expect(@your_logo. get_city).to eq @city
-  sleep 5
+    @your_logo.input_city_field(@city)
+    expect(@your_logo. get_city).to eq @city
+    sleep 5
 end
 
-
 it "should accept a postal code in the address" do
-  @your_logo.input_postcode_field(@postcode)
-  expect(@your_logo.get_postcode).to eq @postcode
+    @your_logo.input_postcode_field(@postcode)
+    expect(@your_logo.get_postcode).to eq @postcode
 end
 
 it "should accept a state in the address" do
-  @your_logo.input_state_field
-  expect(@your_logo.get_state).to be true
+    @your_logo.input_state_field
+    expect(@your_logo.get_state).to be true
 end
 
-it "should accept a country in the address panel" do
-  @your_logo.input_country_field
-  expect(@your_logo.get_country).to be true
+it "should accept a country in the address" do
+    @your_logo.input_country_field
+    expect(@your_logo.get_country).to be true
 end
 
 it "should accept a mobile phone number in the address" do
-  @your_logo.input_mobile_phone(@number)
-  expect(@your_logo.get_mobile_phone).to eq @number
+    @your_logo.input_mobile_phone(@number)
+    expect(@your_logo.get_mobile_phone).to eq @number
 end
 
 it "should input a first name in the address section" do
-  @your_logo.clear_assigning
-  @your_logo.input_assign_address(@address)
-  expect(@your_logo.get_address).to eq @address
+    @your_logo.clear_assigning
+    @your_logo.input_assign_address(@address)
+    expect(@your_logo.get_address).to eq @address
 end
 
-it "should register the account succesfully" do
-  @your_logo.click_register_button
-  sleep 3
-  expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
-end
-
-it "should sign you out" do
-  @your_logo.click_sign_out_button
-  sleep 3
-  expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
-end
-
-it "should succesfully sign you in with the registered email" do
-  @your_logo.input_assign_address(@email)
-  expect(@your_logo.get_email).to eq @email
-end
-
-it "should succesfully sign you in with the registered password" do
-  @your_logo.input_sign_in_password(@password)
-  expect(@your_logo.get_password).to eq @password
-end
-
-it "should succesfully sign you in with the registered account" do
-  @your_logo.click_sign_in_button
-  sleep 3
-  expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
-end
-
-it "should sign you out" do
-  @your_logo.click_sign_out_button
-  sleep 3
-  expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
-  sleep 3
-end
+# it "should register the account succesfully" do
+#   @your_logo.click_register_button
+#   sleep 3
+#   expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
+# end
+#
+# it "should sign you out" do
+#   @your_logo.click_sign_out_button
+#   sleep 3
+#   expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
+# end
+#
+# it "should succesfully sign you in with the registered email" do
+#   @your_logo.input_assign_address(@email)
+#   expect(@your_logo.get_email).to eq @email
+# end
+#
+# it "should succesfully sign you in with the registered password" do
+#   @your_logo.input_sign_in_password(@password)
+#   expect(@your_logo.get_password).to eq @password
+# end
+#
+# it "should succesfully sign you in with the registered account" do
+#   @your_logo.click_sign_in_button
+#   sleep 3
+#   expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
+# end
+#
+# it "should sign you out" do
+#   @your_logo.click_sign_out_button
+#   sleep 3
+#   expect(@your_logo.current_url).to eq 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
+#   sleep 3
+# end
 
 
 
