@@ -99,8 +99,6 @@ class Selenium_yourLogo
     @chrome_driver.find_element(:id, @password).attribute('value')
   end
 
-
-
   def enter_dob_day(text)
     dropDown = @chrome_driver.find_element(:id, @days)
     option = Selenium::WebDriver::Support::Select.new(dropDown)
@@ -139,12 +137,11 @@ class Selenium_yourLogo
     @chrome_driver.find_element(:id, 'uniform-newsletter').selected?
   end
 
-
-  def input_special_offers_field
+  def input_special_offers
     @chrome_driver.find_element(:id,'uniform-optin').click
   end
 
-  def get_special_offers_value
+  def get_special_offers
     @chrome_driver.find_element(:id,'uniform-optin').selected?
   end
 

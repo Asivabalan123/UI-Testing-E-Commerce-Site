@@ -67,6 +67,43 @@ describe 'Testing e-commerce using selenium' do
     expect(@your_logo.get_password).to eq @password
   end
 
+  it "should accept a day for the date of birth" do
+    @your_logo.enter_dob_day('14')
+    expect(@your_logo.get_date_of_birth_day).to be true
+  end
+
+  it "should accept a month for the date of birth" do
+    @your_logo.enter_dob_month('10')
+    expect(@your_logo.get_date_of_birth_month).to be true
+  end
+
+  it "should accept a year for the date of birth" do
+    @your_logo.enter_dob_year('1995')
+    expect(@your_logo.get_date_of_birth_year).to be true
+  end
+
+  it "should accept newsletter" do
+    @your_logo.input_special_offers
+    expect(@your_logo.get_newsletter).to be false
+  end
+
+  it "should accept special offers" do
+    @your_logo.get_special_offers
+    expect(@your_logo.get_newsletter).to be false
+  end
+
+  it "should input first name in the address area" do
+  @your_logo.clear_first_name_address
+  @your_logo.input_first_name_address(@first_name)
+  expect(@your_logo.get_first_name).to eq @first_name
+end
+
+it "should input last name in the address area" do
+  @your_logo.clear_last_name_address
+  @your_logo.input_last_name_address(@last_name)
+  expect(@your_logo.get_last_name).to eq @last_name
+end
+
 
 
 end
