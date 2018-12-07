@@ -170,7 +170,7 @@ class Selenium_yourLogo
   end
 
   def input_address_field(text)
-     @chrome_driver.find_element(:id, 'address1').send_keys(text)
+    @chrome_driver.find_element(:id, 'address1').send_keys(text)
   end
 
   def get_address
@@ -251,7 +251,7 @@ class Selenium_yourLogo
     @chrome_driver.find_element(:id, 'passwd').send_keys(text)
   end
 
-  def input_sign_in_password_field(text)
+  def input_sign_in_password(text)
     @chrome_driver.find_element(:id, 'passwd').send_keys(text)
   end
 
